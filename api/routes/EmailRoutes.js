@@ -52,14 +52,4 @@ router.post('/send', (req, res) => {
 
 })
 
-router.get('/send/:destinatario/:assunto/:mensagem', (req, res) => {
-
-    const destinatario = req.params.destinatario
-    const assunto = req.params.assunto
-    const mensagem = req.params.mensagem
-
-    SendEmail(req, res, destinatario, assunto, mensagem)
-
-})
-
 module.exports = router;
