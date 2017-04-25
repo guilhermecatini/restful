@@ -8,6 +8,7 @@ const mongoose = require('mongoose')
 mongoose.connect('mongodb://localhost/fluig')
 
 const ComprasAPI = require('./api/routes/RoutesCompras')
+const EmailAPI = require('./api/routes/EmailRoutes')
 
 const app = express()
 
@@ -30,6 +31,8 @@ app.use(cookieParser())
 app.use(express.static(path.join(__dirname, 'public')))
 
 app.use('/api/v1/compras', ComprasAPI)
+
+app.use('/api/v1/email', EmailAPI)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
